@@ -39,7 +39,7 @@ def draw_detect_contour(image_threshold,original_image,contour):
         perimeter=cv2.arcLength(c,True)
         ((x,y),radius)=cv2.minEnclosingCircle(c)
 
-        if area > 4000:
+        if area > 8000:
             cv2.drawContours(original_image,[c],-1,(150,250,150),-1)
             cv2.drawContours(black_image,[c],-1,(150,250,150),-1)
 
@@ -84,7 +84,7 @@ def main(image):
 
 def get_frame():
     # read the csi camera
-    cap = cv2.VideoCapture(csi_camera.gstreamer_pipeline(flip_method=2), cv2.CAP_GSTREAMER)
+    cap = cv2.VideoCapture(csi_camera.gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)
     while(True):
         ret,frame=cap.read()
 
