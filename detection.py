@@ -84,7 +84,7 @@ def main(image):
 
 def get_frame():
     # read the csi camera
-    cap = cv2.VideoCapture(csi_camera.gstreamer_pipeline(flip_method=0), cv2.CAP_GSTREAMER)
+    cap = cv2.VideoCapture(csi_camera.gstreamer_pipeline(flip_method=2), cv2.CAP_GSTREAMER)
     while(True):
         ret,frame=cap.read()
 
